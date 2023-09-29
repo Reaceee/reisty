@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;1,300&display=swap');
+
+:root {
+  --reisty_red: #BC172F;
+}
+
+* {
+  font-family: 'work sans', sans-serif;
+}
+
+input {
+  outline: none;
+}
+
+input:is([type="date"], [type="time"])::-webkit-calendar-picker-indicator {
+  display: none;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+
+*::selection {
+  background: #BC172F9F;
+  color: #fff;
+}
+
+.download *::selection {
+  background: #ffffff30;
+  color: #fff;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.quickFinder {
+  user-select: none;
+}
+
+.selectorPad {
+  position: relative;
+}
+
+.selectorPad::before {
+  content: '';
+  width: 0;
+  transition: cubic-bezier(0.165, 0.84, 0.44, 1) .3s;
+  height: 1px;
+  position: absolute;
+  bottom: -3px;
+  border-bottom: 1px solid var(--reisty_red);
+}
+
+.selectorPad:focus-within:before {
+  width: 100%;
+}
+
+.searchBar .SearchSug {
+  opacity: 0;
+  max-height: 100px;
+  overflow: hidden;
+  transition: all cubic-bezier(0.215, 0.610, 0.355, 1) .23s;
+  margin-top: 10px;
+  visibility: hidden;
+}
+
+.searchBar:focus-within .SearchSug {
+  opacity: 1;
+  max-height: 500px;
+  overflow-y: scroll;
+  margin-top: 0;
+  visibility: visible;
+}
+
+.regionSelector .Regions {
+  opacity: 0;
+  max-height: 100px;
+  overflow: hidden;
+  transition: all cubic-bezier(0.215, 0.610, 0.355, 1) .23s;
+  margin-top: 10px;
+  visibility: hidden;
+}
+
+.regionSelector:focus-within .Regions {
+  opacity: 1;
+  max-height: 500px;
+  overflow-y: scroll;
+  margin-top: 0;
+  visibility: visible;
+}
+
+.SearchSug::-webkit-scrollbar,
+.allRegions::-webkit-scrollbar {
+  background: none;
+  width: 4px;
+  height: 4px;
+}
+
+.SearchSug::-webkit-scrollbar-thumb,
+.allRegions::-webkit-scrollbar-thumb {
+  background: #cccccc90;
+}
+
+::-webkit-scrollbar {
+  background: none;
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+.ftcard:hover {
+  box-shadow: var(--reisty_red) 6px 6px 0;
+}
+
+.guestSelector .guestNumbers {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow-y: scroll;
+}
+
+.guestSelector:focus .guestNumbers {
+  opacity: 1;
+  visibility: visible;
+  max-height: 100vh;
+}
+
+.searchWord .heroSearchSug {
+  opacity: 0;
+  max-height: 0px;
+  overflow-y: scroll;
+  visibility: hidden;
+}
+
+.searchWord:is(:focus, :focus-within) .heroSearchSug {
+  visibility: visible;
+  opacity: 1;
+  max-height: 100vh;
+}
+
+.dateSelector .CALENDAR {
+  opacity: 0;
+  max-height: 0px;
+  overflow-y: scroll;
+  visibility: hidden;
+}
+
+.dateSelector:is(:focus, :focus-within) .CALENDAR {
+  visibility: visible;
+  opacity: 1;
+  max-height: 200vh;
+}
+
+.sideBar {
+  z-index: 999;
+  transition-delay: .6s;
+}
+
+.showPics .arrows {
+  opacity: 0;
+}
+
+.showPics:hover .arrows {
+  opacity: 1;
+}
+
+.download{
+  background-image: url("./assets/pattern.png");
+  background-size: 300px;
+
+}
+
+/* Calendar Style starts */
+
+.custom-calendar {
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 40;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-top: -10px;
+}
+
+.day-of-week {
+  font-weight: 500;
+  margin: 5px;
+  padding: 8px;
+  color: #999;
+}
+
+.calendar-day {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  margin: 1px;
+}
+
+.empty-cell {
+  visibility: hidden;
+}
+
+.current-date {
+  background-color: var(--reisty_red);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.mobileSearch {
+  transition: all cubic-bezier(0.39, 0.575, 0.565, 1) .2s;
+}
+
+
+/* Calendar Style ends */
